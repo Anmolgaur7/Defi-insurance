@@ -44,7 +44,7 @@ contract CryptoWalletInsurance {
         require(block.timestamp >= lastPremiumPaymentTimestamp + 30 days, "Premium not paid for the current month");
 
         // Perform necessary checks, e.g., recent hack events
-        if(msg.sender.balanceof(address(this))==0) {
+        if(msg.sender.balance==0) {
             // If not enough funds, transfer the remaining balance to the owner
         payable(owner).transfer(coverageAmount);
         isClaimed = true;
